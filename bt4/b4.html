@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phim Hoạt Hình</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">PhimHoạtHình</div>
+</header>
+
+<nav class="head-link">
+  <a href="#">Phim hoạt hình</a>
+  <a href="#">Phim yêu thích</a>
+  <a href="#">Nhân vật hoạt hình</a>
+  <a href="#">Góp ý</a>
+</nav>
+
+<div class="content">
+  <div class="left-content">
+    <ul class="video-menu">
+      <li><a href="#" class="active" onclick="loadVideo('https://www.youtube.com/embed/VIDEO_ID_1')">Video 1: Welcome đến khách sạn Nobi</a></li>
+      <li><a href="#" onclick="loadVideo('https://www.youtube.com/embed/VIDEO_ID_2')">Video 2: Suneo khổng lồ</a></li>
+      <li><a href="#" onclick="loadVideo('https://www.youtube.com/embed/VIDEO_ID_3')">Video 3: Còi điều khiển vật</a></li>
+      <li><a href="#" onclick="loadVideo('https://www.youtube.com/embed/VIDEO_ID_4')">Video 4: Chiếc máy tạo kẹo bông</a></li>
+    </ul>
+  </div>
+  <div class="right-content">
+    <iframe id="video-frame" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<footer>
+  <p>Bản quyền © 2024 - PhimHoạtHình</p>
+</footer>
+
+<script>
+  function loadVideo(url) {
+    document.getElementById("video-frame").src = url;
+
+    // Đổi trạng thái active của menu
+    const links = document.querySelectorAll(".video-menu a");
+    links.forEach(link => link.classList.remove("active"));
+    event.target.classList.add("active");
+  }
+</script>
+
+</body>
+</html>
